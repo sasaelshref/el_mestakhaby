@@ -1,0 +1,299 @@
+:root {
+  --bg-color: #0b0914;
+  --card-bg: #151124;
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: #2e234a;
+  --glow-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tajawal', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* الشاشات والعرض */
+.view {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.view.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* الهيدر والعناصر */
+.main-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.hero-card, .auth-card, .send-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: var(--glow-shadow);
+  text-align: center;
+}
+
+.hero-card h2, .auth-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.hero-card p, .auth-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* الأزرار */
+.btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+  font-size: 15px;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.primary-btn:hover {
+  background: var(--primary-hover);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.text-btn {
+  background: transparent;
+  color: var(--text-muted);
+  margin-top: 15px;
+}
+
+/* الخطوات */
+.steps-section {
+  margin-top: 30px;
+}
+
+.steps-section h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.steps-grid {
+  display: flex;
+  gap: 10px;
+}
+
+.step-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 15px 10px;
+  border-radius: 12px;
+  flex: 1;
+  text-align: center;
+}
+
+.step-box span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 25px;
+  margin-bottom: 8px;
+}
+
+.step-box h4 {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.step-box p {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* نماذج الإدخال */
+.input-group {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+.input-group input, textarea {
+  width: 100%;
+  padding: 12px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-group input:focus, textarea:focus {
+  border-color: var(--primary);
+}
+
+/* لوحة التحكم والرسائل */
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.logout-btn {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.link-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.copy-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.copy-row input {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  border-radius: 8px;
+  color: #fff;
+  flex: 1;
+  font-size: 13px;
+}
+
+.small-btn {
+  padding: 8px 15px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 13px;
+}
+
+.messages-section h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+.messages-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.msg-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.empty-msg {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+}
+
+.success-alert {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.hidden {
+  display: none;
+}
